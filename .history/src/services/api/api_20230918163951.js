@@ -31,6 +31,7 @@ class apiEbay {
     let res = await client({
       method:"GET",
       url:`/products/search?q=${search}`
+      https://dummyjson.com/products/search?q=phone
     })
     return res
   }

@@ -1,0 +1,23 @@
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import apiEbay from '../../services/api/api'
+
+export default function Search() {
+
+    
+
+    const searchproducts = async()=>{
+        let res =await apiEbay.searchproducts(search)
+        console.log(res);
+        console.log("ishladi");
+    }
+    // useEffect(()=>{
+    //     searchproducts()
+    // },[])
+
+  return (
+    <div>
+        
+    </div>
+  )
+}

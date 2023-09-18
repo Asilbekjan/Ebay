@@ -25,7 +25,7 @@ export default function Search() {
             {
               searchs.map((a, i) => {
                 return (
-                  <div key={i}>
+                  <div key={}>
                     <h1>{a.id}</h1>
                   </div>
                 )

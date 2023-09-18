@@ -4,39 +4,21 @@ import apiEbay from '../../services/api/api'
 
 export default function Search() {
   const [searchs, setSearchs] = useState([])
-
   const params = useParams()
   let search = params.search
 
   const searchproducts = async () => {
     let res = await apiEbay.searchproducts(search)
-    setSearchs(res.data.products);
+    console.log(res.data.products);
+    console.log("ishladi");
   }
   useEffect(() => {
     searchproducts()
-    console.log(searchs);
   }, [])
 
   return (
     <div>
-      {
-        (searchs.length > 0) ?
-          <>
-            {
-              searchs.map((a, i) => {
-                return (
-                  <div key={i}>
-                    <h1>{a.id}</h1>
-                  </div>
-                )
-              })
-            }
-          </>
-          :
-          <>
-            loading
-          </>
-      }
+
     </div>
   )
 }

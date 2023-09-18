@@ -40,7 +40,7 @@ export default function Navbar() {
   const navigate = useNavigate()
 
   function onSearch(value) {
-    console.log(value);
+    console.log();
     navigate(`/search/${value}`)
   }
 

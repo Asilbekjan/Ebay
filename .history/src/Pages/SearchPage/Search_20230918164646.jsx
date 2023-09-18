@@ -19,23 +19,8 @@ export default function Search() {
 
   return (
     <div>
-      {
-        (searchs.length > 0) ?
-          <>
-            {
-              searchs.map((a, i) => {
-                return (
-                  <div key={i}>
-                    <h1>{a.id}</h1>
-                  </div>
-                )
-              })
-            }
-          </>
-          :
-          <>
-            loading
-          </>
+      { 
+        searchs.length>
       }
     </div>
   )

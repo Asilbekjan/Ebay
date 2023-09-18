@@ -30,7 +30,8 @@ class apiEbay {
   static async searchproducts(search){
     let res = await client({
       method:"GET",
-      url:`/products/search?q=${search}`
+      url:`/search/${search}`
+      https://dummyjson.com/products/search?q=phone
     })
     return res
   }

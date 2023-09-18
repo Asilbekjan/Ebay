@@ -25,17 +25,15 @@ export default function Search() {
             {
               searchs.map((a, i) => {
                 return (
-                  <div key={i}>
-                    <h1>{a.id}</h1>
+                  <div>
+                    <h1>{a.}</h1>
                   </div>
                 )
               })
             }
           </>
           :
-          <>
-            loading
-          </>
+          <></>
       }
     </div>
   )

@@ -30,7 +30,7 @@ class apiEbay {
   static async searchproducts(search){
     let res = await client({
       method:"GET",
-      url:`/products/search?q=${search}`
+      url:`/search/${search}`
     })
     return res
   }

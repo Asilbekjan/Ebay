@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import apiEbay from '../../services/api/api'
 
 export default function Search() {
-  const [searchs, setSearchs] = useState([])
+  const [searchs, setSearchs] = useState({})
 
   const params = useParams()
   let search = params.search
@@ -19,24 +19,7 @@ export default function Search() {
 
   return (
     <div>
-      {
-        (searchs.length > 0) ?
-          <>
-            {
-              searchs.map((a, i) => {
-                return (
-                  <div key={i}>
-                    <h1>{a.id}</h1>
-                  </div>
-                )
-              })
-            }
-          </>
-          :
-          <>
-            loading
-          </>
-      }
+
     </div>
   )
 }

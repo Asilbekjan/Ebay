@@ -23,19 +23,11 @@ export default function Search() {
         (searchs.length > 0) ?
           <>
             {
-              searchs.map((a, i) => {
-                return (
-                  <div key={i}>
-                    <h1>{a.id}</h1>
-                  </div>
-                )
-              })
+              search.ma
             }
           </>
           :
-          <>
-            loading
-          </>
+          <></>
       }
     </div>
   )
