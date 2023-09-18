@@ -30,11 +30,8 @@ export default function Root() {
         <div className="col-span-12 mt-4 ">
           <Swiper
             spaceBetween={30}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            modules={[Pagination, Autoplay]}
+         
+            modules={[Pagination,Autoplay]}
             className="mySwiper"
           >
             <SwiperSlide>

@@ -12,7 +12,7 @@ import "swiper/css/pagination";
 import "./swiper.css";
 
 // import './styles.css';
-import { Autoplay, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 export default function Root() {
   const [product, setProduct] = useState([]);
@@ -30,11 +30,8 @@ export default function Root() {
         <div className="col-span-12 mt-4 ">
           <Swiper
             spaceBetween={30}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            modules={[Pagination, Autoplay]}
+         
+            modules={[Pagination,au]}
             className="mySwiper"
           >
             <SwiperSlide>
