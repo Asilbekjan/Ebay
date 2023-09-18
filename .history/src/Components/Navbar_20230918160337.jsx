@@ -44,9 +44,10 @@ export default function Navbar() {
   }
 
   return (
-    <div className=" bg-[#F8F8F8]">
+    <div>
+
       <div className="container h-[80px] flex">
-        <div className="grid grid-cols-12 items-center">
+        <div className="grid grid-cols-12 bg-[#F8F8F8] items-center">
           <div className="col-span-1">
             <img src="./assets/img/Group 22.png" alt="" />
           </div>

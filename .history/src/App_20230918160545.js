@@ -1,16 +1,14 @@
 import Navbar from "./Components/Navbar";
-import { Outlet } from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import Footer from "./Components/Footer";
-
+import { DatePicker } from 'antd';
 import './App.css'
-import Header from "./Components/Header";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Outlet />
-      <Footer />
-      <Header/>
+      <Navbar/> 
+        <Outlet/>
+      <Footer/>
     </div>
   );
 }
