@@ -65,7 +65,7 @@ export default function Navbar() {
               <Search
                 className="w-[300px]"
                 placeholder="search anything"
-                allowClear
+                
                 onSearch={onSearch}
 
               />
