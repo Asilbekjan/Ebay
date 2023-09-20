@@ -23,7 +23,7 @@ export default function Search() {
     <div className='container'>
       {
         (searchs.length > 0) ?
-          <div className="grid grid-cols-12 gap-5 m-9">
+          <div className="grid grid-cols-12 gap-5">
             {
               searchs.map((a, i) => {
                 return (

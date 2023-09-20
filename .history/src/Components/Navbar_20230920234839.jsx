@@ -36,7 +36,22 @@ const handleMenuClick = (e) => {
   message.info("Click on menu item.");
   console.log("click", e);
 };
-
+const items = [
+  {
+    label: "smarphones",
+    key: "1",
+    icon: <PhoneOutlined />,
+  },
+  {
+    label: "laptops",
+    key: "2",
+    icon: <LaptopOutlined />,
+  },
+];
+const menuProps = {
+  items,
+  onClick: handleMenuClick,
+};
 
 export default function Navbar() {
 

@@ -36,7 +36,22 @@ const handleMenuClick = (e) => {
   message.info("Click on menu item.");
   console.log("click", e);
 };
-
+const items = [
+  {
+    label: "smarphones",
+    key: "1",
+    icon: <PhoneOutlined />,
+  },
+  {
+    label: "laptops",
+    key: "2",
+    icon: <LaptopOutlined />,
+  },
+];
+const menuProps = {
+  items,
+  onClick: handleMenuClick,
+};
 
 export default function Navbar() {
 
@@ -63,6 +78,14 @@ export default function Navbar() {
             </div>
             <div className="col-span-6">
               <div className="ms-28">
+                <Dropdown className="border-none mr-4" menu={menuProps}>
+                  <Button>
+                    <Space>
+                      All Categories
+                      <DownOutlined />
+                    </Space>
+                  </Button>
+                </Dropdown>
                 <Search
                   className="w-[300px]"
                   placeholder="search anything"
@@ -73,6 +96,12 @@ export default function Navbar() {
             </div>
             <div className="col-span-5 ms-12">
               <div className=" flex items-center">
+                <Space className="text-[20px]">
+                  <HeartOutlined />
+                </Space>
+                <span className="ms-2 text-[12px] text-[#2F294D] font-[500] ">
+                  WishList
+                </span>
                 <Space className="ms-3 text-[20px]">
                   <ShoppingCartOutlined />
                 </Space>
