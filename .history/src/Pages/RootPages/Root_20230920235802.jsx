@@ -178,6 +178,9 @@ export default function Root() {
           <div className="grid grid-cols-12 gap-7 mb-4 mt-10">
             {product.map((item, index) => {
               return (
+                <div>
+                  
+                </div>
                 <div key={index} className="col-span-4">
                   <div className="card h-[360px] shadow-lg rounded-lg">
                     <img
@@ -216,16 +219,11 @@ export default function Root() {
           </div>
         ) : (
           <>
-            <Loading/>
+            <Loading />
           </>
         )}
       </div>
-      <Link
-        className="ms-[500px] bg-blue-500 text-white py-2 px-5 rounded-full "
-        to={"/allproducts"}
-      >
-        Go to all products
-      </Link>
+      
     </div>
   );
 }

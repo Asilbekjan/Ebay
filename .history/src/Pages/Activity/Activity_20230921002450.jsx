@@ -4,8 +4,6 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Carts from './Charts/Charts'
-
 import { Card } from 'antd';
 
 function TabPanel(props) {
@@ -66,7 +64,7 @@ export default function Activity() {
                     <Tab label="Like Blogs" {...a11yProps(2)} />
                 </Tabs>
                 <TabPanel value={value} index={0}>
-                    <Carts/>
+                    <Ape
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     Item Two

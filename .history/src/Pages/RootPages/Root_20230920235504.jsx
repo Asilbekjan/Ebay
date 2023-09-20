@@ -15,7 +15,6 @@ import "./swiper.css";
 
 // import './styles.css';
 import { Autoplay, Pagination } from "swiper/modules";
-import Loading from "../Loading/Loading";
 
 export default function Root() {
   const [product, setProduct] = useState([]);
@@ -28,7 +27,7 @@ export default function Root() {
   }, []);
 
   function like(props) {
-
+    
   }
 
   return (
@@ -174,58 +173,66 @@ export default function Root() {
         </div>
       </div>
       <div className="container">
-        {product.length > 0 ? (
-          <div className="grid grid-cols-12 gap-7 mb-4 mt-10">
-            {product.map((item, index) => {
-              return (
-                <div key={index} className="col-span-4">
-                  <div className="card h-[360px] shadow-lg rounded-lg">
-                    <img
-                      className="w-[300px] object-cover h-[220px] ms-8 rounded-xl mt-3 "
-                      src={item.thumbnail}
-                      alt=""
-                    />
-                    <p className="ms-10 text-xl font-semibold ">
-                      {item.title}
-                    </p>
-                    <p className="ms-10 text-xs text-[black]/50">
-                      {item.brand}
-                    </p>
-                    <div className="flex items-center ms-10 mb-3 justify-between">
-                      <p className="font-semibold font-mono">
-                        {item.discountPercentage}$
+          {product.length > 0 ? (
+            <div className="grid grid-cols-12 gap-7 mb-4 mt-10">
+              {product.map((item, index) => {
+                return (
+                  <div key={index} className="col-span-4">
+                    <div className="card h-[360px] shadow-lg rounded-lg">
+                      <img
+                        className="w-[300px] object-cover h-[220px] ms-8 rounded-xl mt-3 "
+                        src={item.thumbnail}
+                        alt=""
+                      />
+                      <p className="ms-10 text-xl font-semibold ">
+                        {item.title}
                       </p>
-                      <Rate value={item.rating} />
-                    </div>
-                    <div className="flex">
-                      <Space className="text-2xl relative left-10">
-                        <AiOutlineHeart className="cursor-pointer  text-gray-500" onClick={() => { like(item.id) }} />
-                        <HiOutlineSaveAs className="cursor-pointer text-gray-500" />
-                      </Space>
-                      <Link
-                        className="bg-blue-500 text-white py-2 px-5 rounded-full ms-[200px]"
-                        to={`/singleproduct/${item.id}`}
-                      >
-                        Batafsil
-                      </Link>
+                      <p className="ms-10 text-xs text-[black]/50">
+                        {item.brand}
+                      </p>
+                      <div className="flex items-center ms-10 mb-3 justify-between">
+                        <p className="font-semibold font-mono">
+                          {item.discountPercentage}$
+                        </p>
+                        <Rate value={item.rating} />
+                      </div>
+                      <div className="flex">
+                        <Space className="text-2xl relative left-10">
+                          <AiOutlineHeart className="cursor-pointer  text-gray-500" onClick={()=>{like(item.id)}} />
+                          <HiOutlineSaveAs className="cursor-pointer text-gray-500" />
+                        </Space>
+                        <Link
+                          className="bg-blue-500 text-white py-2 px-5 rounded-full ms-[200px]"
+                          to={`/singleproduct/${item.id}`}
+                        >
+                          Batafsil
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <>
-            <Loading/>
-          </>
-        )}
+                );
+              })}
+            </>
+          ) : (
+            <>
+              <div className="ms-[600px] py-20">
+                <LoadingOutlined
+                  style={{
+                    fontSize: 44,
+                  }}
+                  spin
+                />
+              </div>
+            </>
+          )}
+        </div>
+        <Link
+          className="ms-[500px] bg-blue-500 text-white py-2 px-5 rounded-full "
+          to={"/allproducts"}
+        >
+          Go to all products
+        </Link>
       </div>
-      <Link
-        className="ms-[500px] bg-blue-500 text-white py-2 px-5 rounded-full "
-        to={"/allproducts"}
-      >
-        Go to all products
-      </Link>
     </div>
   );
 }

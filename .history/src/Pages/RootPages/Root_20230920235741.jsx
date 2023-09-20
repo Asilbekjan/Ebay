@@ -216,16 +216,11 @@ export default function Root() {
           </div>
         ) : (
           <>
-            <Loading/>
+            <Loading />
           </>
         )}
       </div>
-      <Link
-        className="ms-[500px] bg-blue-500 text-white py-2 px-5 rounded-full "
-        to={"/allproducts"}
-      >
-        Go to all products
-      </Link>
+      
     </div>
   );
 }

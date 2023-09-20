@@ -65,7 +65,7 @@ export default function Activity() {
                     <Tab label="Saved Blogs" {...a11yProps(1)} />
                     <Tab label="Like Blogs" {...a11yProps(2)} />
                 </Tabs>
-                <TabPanel value={value} index={0}>
+                <TabPanel value={value} index={0} className='m-[50px]'>
                     <Carts/>
                 </TabPanel>
                 <TabPanel value={value} index={1}>

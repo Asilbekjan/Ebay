@@ -216,7 +216,7 @@ export default function Root() {
           </div>
         ) : (
           <>
-            <Loading/>
+            <Loading />
           </>
         )}
       </div>

@@ -26,7 +26,7 @@ export default function Settings() {
             <Card title="Your Settings">
                 <div className='flex items-center justify-center'>
                     <div className='w-[150px] h-[150px] bg-[#BFBFBF] flex items-center justify-center cursor-pointer rounded-[50px]'>
-                    
+sd
                     </div>
                 </div>
             </Card>

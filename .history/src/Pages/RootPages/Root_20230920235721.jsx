@@ -15,7 +15,6 @@ import "./swiper.css";
 
 // import './styles.css';
 import { Autoplay, Pagination } from "swiper/modules";
-import Loading from "../Loading/Loading";
 
 export default function Root() {
   const [product, setProduct] = useState([]);
@@ -216,7 +215,7 @@ export default function Root() {
           </div>
         ) : (
           <>
-            <Loading/>
+            <Loa
           </>
         )}
       </div>
