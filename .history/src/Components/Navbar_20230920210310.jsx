@@ -21,11 +21,6 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout'
 import { Button, Dropdown, message } from "antd";
 import { useNavigate } from "react-router-dom";
-import './navbar.css'
-import { FcSearch } from 'react-icons/fc'
-
-
-
 const { Search } = Input;
 const handleButtonClick = (e) => {
   message.info("Click on left button.");
@@ -90,6 +85,16 @@ export default function Navbar() {
 
                 onSearch={onSearch}
               />
+              <div class="container">
+                <input type="text" name="text" class="input" required="" placeholder="Type to search...">
+                  <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                      <title>Search</title>
+                      <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path>
+                      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path>
+                    </svg>
+                  </div>
+              </div>
             </div>
           </div>
           <div className="col-span-5 ms-12">

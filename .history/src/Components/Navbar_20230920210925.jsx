@@ -22,7 +22,6 @@ import Logout from '@mui/icons-material/Logout'
 import { Button, Dropdown, message } from "antd";
 import { useNavigate } from "react-router-dom";
 import './navbar.css'
-import { FcSearch } from 'react-icons/fc'
 
 
 
@@ -89,7 +88,12 @@ export default function Navbar() {
                 placeholder="search anything"
 
                 onSearch={onSearch}
-              />
+              /><form class="search-bar" action="">
+                <input class="search-input" required="" name="search" type="search" autocomplete="off">
+                  <button type="submit" class="search-btn">
+                    <span>Search</span>
+                  </button>
+              </form>
             </div>
           </div>
           <div className="col-span-5 ms-12">

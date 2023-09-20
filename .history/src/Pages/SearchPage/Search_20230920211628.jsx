@@ -27,7 +27,7 @@ export default function Search() {
               searchs.map((a, i) => {
                 return (
                   <div className='col-span-3 ' key={i}>
-                      <div className="card p-3 bg-slate-50 rounded-xl hover:shadow-2xl">
+                      <div className="card p-3 bg-slate-50 rounded-xl hover:shadow-2xl hover:w-[400px] hover:origin-top-right">
                         <img className='w-[300px] h-[200px]' src={a.thumbnail} alt={a.title} />
                         <p className='text-[20px] font-[600]'>{a.title}</p>
                         <p className='text-[10px] text-[black]/50'>{a.brand}</p>

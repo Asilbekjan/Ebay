@@ -84,12 +84,18 @@ export default function Navbar() {
                   </Space>
                 </Button>
               </Dropdown>
-              <Search
+              {/* <Search
                 className="w-[300px]"
                 placeholder="search anything"
 
                 onSearch={onSearch}
-              />
+              /> */}
+              <div class="input-container">
+                <input placeholder="Search something..." class="input" name="text" type="text" />
+                <div className="bg-red-500 w-[25px]">
+                  <FcSearch />
+                </div>
+              </div>
             </div>
           </div>
           <div className="col-span-5 ms-12">

@@ -84,12 +84,13 @@ export default function Navbar() {
                   </Space>
                 </Button>
               </Dropdown>
-              <Search
+              {/* <Search
                 className="w-[300px]"
                 placeholder="search anything"
 
                 onSearch={onSearch}
-              />
+              /> */}
+             
             </div>
           </div>
           <div className="col-span-5 ms-12">
