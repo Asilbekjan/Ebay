@@ -67,7 +67,7 @@ export default function Navbar() {
       <div className="container h-[80px] flex">
         <div className="grid grid-cols-12 items-center">
           <div className="col-span-1">
-            <img src="./assets/img/Group 22.png" alt="" />
+            <Link to={'/app'}><img src="./assets/img/Group 22.png" alt="" /></Link>
           </div>
           <div className="col-span-6">
             <div className="ms-28">
