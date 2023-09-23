@@ -67,14 +67,17 @@ export default function Activity() {
                     <Tab label="Like Blogs" {...a11yProps(2)} />
                 </Tabs>
                 <TabPanel value={value} index={0}>
+<<<<<<< HEAD
                     <Carts />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     <Cards />
+=======
                     Item One
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     saqlanganlar
+>>>>>10d63368267c6db371
                 </TabPanel>
                 <TabPanel value={value} index={2}>
                     Likelar
