@@ -7,6 +7,7 @@ import {
   EyeInvisibleOutlined,
 } from "@ant-design/icons";
 import { Input, notification } from "antd";
+import {RiLockPasswordLine} from 'react-icons/ri'
 
 
 export default function Register() {
@@ -59,6 +60,7 @@ export default function Register() {
                   style={{ width: 350,display:"flex" }}
                   className="ms-14  "
                   placeholder="password"
+                  prefix={<RiLockPasswordLine/>}
                   iconRender={(visible) =>
                     visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
                   }
@@ -68,6 +70,7 @@ export default function Register() {
                   style={{ width: 350,display:"flex" }}
                   className="ms-14  "
                   placeholder="repeat password"
+                  prefix={<RiLockPasswordLine/>}
                   iconRender={(visible) =>
                     visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
                   }

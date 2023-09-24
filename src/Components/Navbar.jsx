@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input, Space } from "antd";
 import { Link } from "react-router-dom";
 import {
@@ -8,25 +8,23 @@ import {
   HeartOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
-import { LuActivitySquare } from 'react-icons/lu'
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout'
+import { LuActivitySquare } from "react-icons/lu";
+import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
+import Settings from "@mui/icons-material/Settings";
+import Logout from "@mui/icons-material/Logout";
 import { Button, Dropdown, message } from "antd";
 import { useNavigate } from "react-router-dom";
-import './navbar.css'
-import { FcSearch } from 'react-icons/fc'
-import { AiOutlineLogin } from 'react-icons/ai'
+import "./navbar.css";
+import { FcSearch } from "react-icons/fc";
+import { AiOutlineLogin } from "react-icons/ai";
 import Products from "../Pages/Products/Products";
-
-
 
 const { Search } = Input;
 const handleButtonClick = (e) => {
@@ -38,13 +36,17 @@ const handleMenuClick = (e) => {
   console.log("click", e);
 };
 
-
 export default function Navbar() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
+  const [tokin, setTokin] = useState(null);
+  useEffect(() => {
+    let tokintwo = JSON.parse(localStorage.getItem("login"));
+    setTokin(tokintwo);
+  }, []);
 
   function onSearch(value) {
-    navigate(`/search/${value}`)
+    navigate(`/search/${value}`);
   }
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -60,14 +62,15 @@ export default function Navbar() {
         <div className="container h-[80px] flex">
           <div className="grid grid-cols-12 items-center">
             <div className="col-span-1">
-              <Link to={'/app'}><img src="./assets/img/Group 22.png" alt="" /></Link>
+              <Link to={"/app"}>
+                <img src="./assets/img/Group 22.png" alt="" />
+              </Link>
             </div>
             <div className="col-span-6">
               <div className="ms-28">
                 <Search
                   className="w-[300px]"
                   placeholder="search anything"
-
                   onSearch={onSearch}
                 />
               </div>
@@ -80,91 +83,113 @@ export default function Navbar() {
                 <span className="ms-2 text-[12px] text-[#2F294D] font-[500]">
                   My Cart
                 </span>
-                <div>
-                  <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-                    <Tooltip title="Account settings">
-                      <IconButton
-                        onClick={handleClick}
-                        size="small"
-                        sx={{ ml: 2 }}
-                        aria-controls={open ? 'account-menu' : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? 'true' : undefined}
+                {!!tokin ? (
+                  <>
+                    <div>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          textAlign: "center",
+                        }}
                       >
-                        <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
-                      </IconButton>
+                        <Tooltip title="Account settings">
+                          <IconButton
+                            onClick={handleClick}
+                            size="small"
+                            sx={{ ml: 2 }}
+                            aria-controls={open ? "account-menu" : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? "true" : undefined}
+                          >
+                            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                          </IconButton>
+                        </Tooltip>
+                      </Box>
+                      <Menu
+                        anchorEl={anchorEl}
+                        id="account-menu"
+                        open={open}
+                        onClose={handleClose}
+                        onClick={handleClose}
+                        PaperProps={{
+                          elevation: 0,
+                          sx: {
+                            overflow: "visible",
+                            filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                            mt: 1.5,
+                            "& .MuiAvatar-root": {
+                              width: 32,
+                              height: 32,
+                              ml: -0.5,
+                              mr: 1,
+                            },
+                            "&:before": {
+                              content: '""',
+                              display: "block",
+                              position: "absolute",
+                              top: 0,
+                              right: 14,
+                              width: 10,
+                              height: 10,
+                              bgcolor: "background.paper",
+                              transform: "translateY(-50%) rotate(45deg)",
+                              zIndex: 0,
+                            },
+                          },
+                        }}
+                        transformOrigin={{
+                          horizontal: "right",
+                          vertical: "top",
+                        }}
+                        anchorOrigin={{
+                          horizontal: "right",
+                          vertical: "bottom",
+                        }}
+                      >
+                        <Link to="/profile">
+                          <MenuItem onClick={handleClose}>
+                            <Avatar /> Profile
+                          </MenuItem>
+                        </Link>
+                        <Divider />
+                        <Link to="/settings">
+                          <MenuItem onClick={handleClose}>
+                            <ListItemIcon>
+                              <Settings fontSize="small" />
+                            </ListItemIcon>
+                            Settings
+                          </MenuItem>
+                        </Link>
+                        <Link to="/activity">
+                          <MenuItem onClick={handleClose}>
+                            <ListItemIcon>
+                              <LuActivitySquare />
+                            </ListItemIcon>
+                            Activity
+                          </MenuItem>
+                        </Link>
+                        <MenuItem onClick={handleClose}>
+                          <ListItemIcon>
+                            <Logout fontSize="small" />
+                          </ListItemIcon>
+                          Logout
+                        </MenuItem>
+                      </Menu>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <Tooltip title="Login" className="cursor-pointer">
+                      <div className="text-[25px]">
+                        <Link to="/login">
+                          <AiOutlineLogin />
+                        </Link>
+                      </div>
                     </Tooltip>
-                  </Box>
-                  <Menu
-                    anchorEl={anchorEl}
-                    id="account-menu"
-                    open={open}
-                    onClose={handleClose}
-                    onClick={handleClose}
-                    PaperProps={{
-                      elevation: 0,
-                      sx: {
-                        overflow: 'visible',
-                        filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                        mt: 1.5,
-                        '& .MuiAvatar-root': {
-                          width: 32,
-                          height: 32,
-                          ml: -0.5,
-                          mr: 1,
-                        },
-                        '&:before': {
-                          content: '""',
-                          display: 'block',
-                          position: 'absolute',
-                          top: 0,
-                          right: 14,
-                          width: 10,
-                          height: 10,
-                          bgcolor: 'background.paper',
-                          transform: 'translateY(-50%) rotate(45deg)',
-                          zIndex: 0,
-                        },
-                      },
-                    }}
-                    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                  >
-                    <Link to='/profile'>
-                      <MenuItem onClick={handleClose}>
-                        <Avatar /> Profile
-                      </MenuItem>
-                    </Link>
-                    <Divider />
-                    <Link to='/settings'>
-                      <MenuItem onClick={handleClose}>
-                        <ListItemIcon>
-                          <Settings fontSize="small" />
-                        </ListItemIcon>
-                        Settings
-                      </MenuItem>
-                    </Link>
-                    <Link to='/activity'>
-                      <MenuItem onClick={handleClose}>
-                        <ListItemIcon>
-                          <LuActivitySquare />
-                        </ListItemIcon>
-                        Activity
-                      </MenuItem>
-                    </Link>
-                    <MenuItem onClick={handleClose}>
-                      <ListItemIcon>
-                        <Logout fontSize="small" />
-                      </ListItemIcon>
-                      Logout
-                    </MenuItem>
-                  </Menu>
-                </div>
-                <Tooltip title="Login" className="cursor-pointer" >
-                  <div className="text-[25px]">
-                    <AiOutlineLogin />
-                  </div>
-                </Tooltip>
+                  </>
+                )}
+
                 <button className="bg-blue-500 px-3 rounded-lg ms-3 py-1 text-white btn">
                   Brows All Categories
                 </button>
