@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "./Components/Footer";
 import './App.css'
 import Add_a_FreeProduct from "./Pages/Add_a_FreeProduct/Add_a_FreeProduct";
+import Salom from "./Components/salom";
 
 
 function App() {

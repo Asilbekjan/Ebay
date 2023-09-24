@@ -17,10 +17,10 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route index element={<Root />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="" element={<Login />} />
         <Route path="/registratsiya" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route index element={<Root />} />
         <Route path="/allproducts" element={<Products />} />
         <Route path="/singleproduct/:id" element={<Single />} />
         <Route path="/search/:search" element={<Search />} />

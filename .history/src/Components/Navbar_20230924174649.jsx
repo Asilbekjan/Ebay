@@ -160,7 +160,7 @@ export default function Navbar() {
                     </MenuItem>
                   </Menu>
                 </div>
-                <Tooltip title="Login" className="cursor-pointer" >
+                <Tooltip title="Account settings" className="cu">
                   <div className="text-[25px]">
                     <AiOutlineLogin />
                   </div>

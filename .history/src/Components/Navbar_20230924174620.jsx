@@ -160,11 +160,21 @@ export default function Navbar() {
                     </MenuItem>
                   </Menu>
                 </div>
-                <Tooltip title="Login" className="cursor-pointer" >
-                  <div className="text-[25px]">
-                    <AiOutlineLogin />
-                  </div>
+                <Tooltip title="Account settings">
+                  <IconButton
+                    onClick={handleClick}
+                    size="small"
+                    sx={{ ml: 2 }}
+                    aria-controls={open ? 'account-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                  >
+                    <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                  </IconButton>
                 </Tooltip>
+                <div className="text-[25px]">
+                  <AiOutlineLogin />
+                </div>
                 <button className="bg-blue-500 px-3 rounded-lg ms-3 py-1 text-white btn">
                   Brows All Categories
                 </button>

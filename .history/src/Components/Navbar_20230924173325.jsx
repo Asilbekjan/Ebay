@@ -23,7 +23,6 @@ import { Button, Dropdown, message } from "antd";
 import { useNavigate } from "react-router-dom";
 import './navbar.css'
 import { FcSearch } from 'react-icons/fc'
-import { AiOutlineLogin } from 'react-icons/ai'
 import Products from "../Pages/Products/Products";
 
 
@@ -80,7 +79,7 @@ export default function Navbar() {
                 <span className="ms-2 text-[12px] text-[#2F294D] font-[500]">
                   My Cart
                 </span>
-                <div>
+                {/* <div>
                   <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                     <Tooltip title="Account settings">
                       <IconButton
@@ -159,12 +158,7 @@ export default function Navbar() {
                       Logout
                     </MenuItem>
                   </Menu>
-                </div>
-                <Tooltip title="Login" className="cursor-pointer" >
-                  <div className="text-[25px]">
-                    <AiOutlineLogin />
-                  </div>
-                </Tooltip>
+                </div> */}
                 <button className="bg-blue-500 px-3 rounded-lg ms-3 py-1 text-white btn">
                   Brows All Categories
                 </button>

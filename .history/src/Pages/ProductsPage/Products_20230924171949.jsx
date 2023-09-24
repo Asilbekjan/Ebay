@@ -9,7 +9,6 @@ import { HeartTwoTone } from "@ant-design/icons";
 import { Space } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
-import Loading from "../Loading/Loading";
 
 export default function Products() {
   const [products, setproducts] = useState([]);
@@ -63,7 +62,7 @@ export default function Products() {
           </>
         ) : (
           <>
-            <Loading/>
+            
           </>
         )}
       </div>

@@ -160,11 +160,12 @@ export default function Navbar() {
                     </MenuItem>
                   </Menu>
                 </div>
-                <Tooltip title="Login" className="cursor-pointer" >
-                  <div className="text-[25px]">
-                    <AiOutlineLogin />
-                  </div>
+                <Tooltip title="Account settings">
+                  
                 </Tooltip>
+                <div className="text-[25px]">
+                  <AiOutlineLogin />
+                </div>
                 <button className="bg-blue-500 px-3 rounded-lg ms-3 py-1 text-white btn">
                   Brows All Categories
                 </button>

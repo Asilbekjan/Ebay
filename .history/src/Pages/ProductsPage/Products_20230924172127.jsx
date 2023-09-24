@@ -63,7 +63,7 @@ export default function Products() {
           </>
         ) : (
           <>
-            <Loading/>
+          salom
           </>
         )}
       </div>
